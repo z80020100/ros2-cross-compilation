@@ -49,7 +49,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install -U \
   argcomplete \
-  git+https://github.com/lark-parser/lark.git@0.7d \
+  lark \
   importlib-resources
 
 
