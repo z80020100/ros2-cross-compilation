@@ -3,6 +3,9 @@
 THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 SYSROOTS_DIR=$THIS_DIR/sysroots
 
+# enable an execution of different multi-architecture containers by QEMU and binfmt_misc.
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
 if [ -z "$TARGET_ARCHITECTURE" ]; then
     echo "Missing TARGET_ARCHITECTURE environment variables. Please run first"
     echo "source env.sh <TARGET_ARCHITECTURE>";
